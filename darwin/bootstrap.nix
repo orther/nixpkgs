@@ -3,20 +3,20 @@
 {
   # Nix configuration ------------------------------------------------------------------------------
 
-  nix.binaryCaches = [
+  nix.settings.substituters = [
     "https://cache.nixos.org/"
     ##"https://malo.cachix.org"
     "https://orther.cachix.org"
   ];
-  nix.binaryCachePublicKeys = [
+  nix.settings.trusted-public-keys = [
     "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
     ##"malo.cachix.org-1:fJL4+lpyMs/1cdZ23nPQXArGj8AS7x9U67O8rMkkMIo="
     "orther.cachix.org-1:jmpzDJPbcCSY+jGLbOP8EnwrVZVUqIdUgVpq/62f6vE="
   ];
-  nix.trustedUsers = [
+  nix.settings.trusted-users = [
     "@admin"
   ];
-  users.nix.configureBuildUsers = true;
+  nix.configureBuildUsers = true;
 
   # Enable experimental nix command and flakes
   # nix.package = pkgs.nixUnstable;
