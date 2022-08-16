@@ -204,9 +204,6 @@
         nodePackages = _: prev: {
           nodePackages = prev.nodePackages // import ./pkgs/node-packages { pkgs = prev; };
         };
-
-        # Overlay that adds `lib.colors` to reference colors elsewhere in system configs
-        colors = import ./overlays/colors.nix;
       };
 
       darwinModules = {
@@ -224,6 +221,7 @@
 
       homeManagerModules = {
         # My configurations
+        orther-colors = import ./home/colors.nix;
         orther-config-files = import ./home/config-files.nix;
         orther-fish = import ./home/fish.nix;
         orther-git = import ./home/git.nix;
@@ -236,6 +234,7 @@
         orther-starship-symbols = import ./home/starship-symbols.nix;
 
         # Modules I've created
+        colors = import ./modules/home/colors;
         programs-neovim-extras = import ./modules/home/programs/neovim/extras.nix;
         programs-kitty-extras = import ./modules/home/programs/kitty/extras.nix;
         home-user-info = { lib, ... }: {
