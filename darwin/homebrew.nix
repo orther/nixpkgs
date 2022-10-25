@@ -25,8 +25,13 @@ in
   '';
 
   homebrew.enable = true;
-  homebrew.onActivation.cleanup = "zap";
   homebrew.global.brewfile = true;
+  homebrew.global.lockfiles = true;
+
+  homebrew.onActivation = {
+    "cleanup" = "zap";
+    "autoUpdate" = true;
+  };
 
   homebrew.taps = [
     "homebrew/cask"

@@ -1,5 +1,5 @@
 {
-  description = "Malo’s Nix system configs, and some other useful stuff.";
+  description = "Orther’s Nix system configs, and some other useful stuff.";
 
   inputs = {
     # Package sets
@@ -47,10 +47,10 @@
       homeManagerStateVersion = "22.11";
 
       primaryUserInfo = {
-        username = "malo";
-        fullName = "Malo Bourgon";
-        email = "mbourgon@gmail.com";
-        nixConfigDirectory = "/Users/malo/.config/nixpkgs";
+        username = "orther";
+        fullName = "Brandon Orther";
+        email = "brandon@orther.dev";
+        nixConfigDirectory = "/Users/orther/.config/nixpkgs";
       };
 
       # Modules shared by most `nix-darwin` personal configurations.
@@ -96,17 +96,18 @@
         };
         bootstrap-arm = bootstrap-x86.override { system = "aarch64-darwin"; };
 
-        # My Apple Silicon macOS laptop config
-        MaloBookPro = darwinSystem {
+        # My Apple Silicon macOS Mac Studio Ultra config
+        OrtherStudioUltra= darwinSystem {
           system = "aarch64-darwin";
           modules = nixDarwinCommonModules ++ [
             {
               users.primaryUser = primaryUserInfo;
-              networking.computerName = "Malo’s 💻";
-              networking.hostName = "MaloBookPro";
+              networking.computerName = "Brandon’s 💻";
+              networking.hostName = "stud";
               networking.knownNetworkServices = [
                 "Wi-Fi"
-                "USB 10/100/1000 LAN"
+                "Ethernet"
+                #"USB 10/100/1000 LAN"
               ];
             }
           ];
@@ -129,8 +130,8 @@
 
       # Config I use with Linux cloud VMs
       # Build and activate on new system with:
-      # `nix build .#homeConfigurations.malo.activationPackage; ./result/activate`
-      homeConfigurations.malo = home-manager.lib.homeManagerConfiguration {
+      # `nix build .#homeConfigurations.orther.activationPackage; ./result/activate`
+      homeConfigurations.orther = home-manager.lib.homeManagerConfiguration {
         pkgs = import inputs.nixpkgs-unstable {
           system = "x86_64-linux";
           inherit (nixpkgsConfig) config overlays;
@@ -209,10 +210,10 @@
 
       darwinModules = {
         # My configurations
-        malo-bootstrap = import ./darwin/bootstrap.nix;
-        malo-defaults = import ./darwin/defaults.nix;
-        malo-general = import ./darwin/general.nix;
-        malo-homebrew = import ./darwin/homebrew.nix;
+        orther-bootstrap = import ./darwin/bootstrap.nix;
+        orther-defaults = import ./darwin/defaults.nix;
+        orther-general = import ./darwin/general.nix;
+        orther-homebrew = import ./darwin/homebrew.nix;
 
         # Modules I've created
         programs-nix-index = import ./modules/darwin/programs/nix-index.nix;
@@ -221,17 +222,17 @@
 
       homeManagerModules = {
         # My configurations
-        malo-colors = import ./home/colors.nix;
-        malo-config-files = import ./home/config-files.nix;
-        malo-fish = import ./home/fish.nix;
-        malo-git = import ./home/git.nix;
-        malo-git-aliases = import ./home/git-aliases.nix;
-        malo-gh-aliases = import ./home/gh-aliases.nix;
-        malo-kitty = import ./home/kitty.nix;
-        malo-neovim = import ./home/neovim.nix;
-        malo-packages = import ./home/packages.nix;
-        malo-starship = import ./home/starship.nix;
-        malo-starship-symbols = import ./home/starship-symbols.nix;
+        orther-colors = import ./home/colors.nix;
+        orther-config-files = import ./home/config-files.nix;
+        orther-fish = import ./home/fish.nix;
+        orther-git = import ./home/git.nix;
+        orther-git-aliases = import ./home/git-aliases.nix;
+        orther-gh-aliases = import ./home/gh-aliases.nix;
+        orther-kitty = import ./home/kitty.nix;
+        orther-neovim = import ./home/neovim.nix;
+        orther-packages = import ./home/packages.nix;
+        orther-starship = import ./home/starship.nix;
+        orther-starship-symbols = import ./home/starship-symbols.nix;
 
         # Modules I've created
         colors = import ./modules/home/colors;
@@ -246,7 +247,7 @@
 
     } // flake-utils.lib.eachDefaultSystem (system: {
       # Add re-export `nixpkgs` packages with overlays.
-      # This is handy in combination with `nix registry add my /Users/malo/.config/nixpkgs`
+      # This is handy in combination with `nix registry add my /Users/orther/.config/nixpkgs`
       legacyPackages = import inputs.nixpkgs-unstable {
         inherit system;
         inherit (nixpkgsConfig) config;
