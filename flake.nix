@@ -248,7 +248,7 @@
 
     } // flake-utils.lib.eachDefaultSystem (system: {
       # Add re-export `nixpkgs` packages with overlays.
-      # This is handy in combination with `nix registry add my /Users/malo/.config/nixpkgs`
+      # This is handy in combination with `nix registry add my /Users/orther/.config/nixpkgs`
       legacyPackages = import inputs.nixpkgs-unstable {
         inherit system;
         inherit (nixpkgsConfig) config;
