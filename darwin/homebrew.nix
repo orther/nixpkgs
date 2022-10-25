@@ -47,22 +47,22 @@ in
   homebrew.masApps = {
     "1Password for Safari" = 1569813296;
     "Accelerate for Safari" = 1459809092;
-    DaisyDisk = 411643860;
-    "Dark Mode for Safari" = 1397180934;
+    ###DaisyDisk = 411643860;
+    ###"Dark Mode for Safari" = 1397180934;
     Deliveries = 290986013;
-    Fantastical = 975937182;
-    Keynote = 409183694;
-    Numbers = 409203825;
-    Pages = 409201541;
-    Patterns = 429449079;
-    "Pixelmator Pro" = 1289583905;
-    "Save to Raindrop.io" = 1549370672;
-    Slack = 803453959;
-    "Swift Playgrounds" = 1496833156;
+    ###Fantastical = 975937182;
+    ###Keynote = 409183694;
+    ###Numbers = 409203825;
+    ###Pages = 409201541;
+    ###Patterns = 429449079;
+    ###"Pixelmator Pro" = 1289583905;
+    ###"Save to Raindrop.io" = 1549370672;
+    ###Slack = 803453959;
+    ###"Swift Playgrounds" = 1496833156;
     "Tailscale" = 1475387142;
-    "Things 3" = 904280696;
+    ###"Things 3" = 904280696;
     Vimari = 1480933944;
-    "WiFi Explorer" = 494803304;
+    ###"WiFi Explorer" = 494803304;
     Xcode = 497799835;
     "Yubico Authenticator" = 1497506650;
   };
@@ -70,14 +70,14 @@ in
   # If an app isn't available in the Mac App Store, or the version in the App Store has
   # limitiations, e.g., Transmit, install the Homebrew Cask.
   homebrew.casks = [
-    "1password"
-    "1password-cli"
+    "1password-beta"
+    "1password-cli-beta"
     "anki"
-    "arq"
+    ###"arq"
     "balenaetcher"
-    "cleanmymac"
+    ###"cleanmymac"
     "element"
-    "etrecheckpro"
+    ###"etrecheckpro"
     "discord"
     "firefox"
     "google-chrome"
@@ -86,19 +86,19 @@ in
     "hammerspoon"
     "keybase"
     # "loopback" -- TODO: re-enable when macOS 13 version ships
-    "nvidia-geforce-now"
+    ###"nvidia-geforce-now"
     "obsbot-me-tool"
     "obsbot-tinycam"
     "parallels"
     "postman"
-    "protonvpn"
-    "raindropio"
+    ###"protonvpn"
+    ###"raindropio"
     "raycast"
-    "signal"
-    "skype"
-    "steam"
+    ###"signal"
+    ###"skype"
+    ###"steam"
     "superhuman"
-    "tor-browser"
+    ###"tor-browser"
     "transmission"
     "transmit"
     "visual-studio-code"
